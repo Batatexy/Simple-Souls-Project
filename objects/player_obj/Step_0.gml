@@ -125,7 +125,6 @@ if keyboard_check_pressed(ord("1")) and global.weapon1=1{
 	spdatk=3.5
 	atkvar=30
 	weapon_obj.visible=true
-	weaponatk2_obj.visible=true
 }else
 
 if keyboard_check_pressed(ord("2")) and global.weapon2=1{
@@ -134,7 +133,6 @@ if keyboard_check_pressed(ord("2")) and global.weapon2=1{
 	spdatk=4
 	atkvar=30
 	weapon_obj.visible=true
-	weaponatk2_obj.visible=true
 }else
 
 if keyboard_check_pressed(ord("3")) and global.weapon3=1{
@@ -143,7 +141,6 @@ if keyboard_check_pressed(ord("3")) and global.weapon3=1{
 	spdatk=5
 	atkvar=100
 	weapon_obj.visible=true
-	weaponatk2_obj.visible=true
 }else
 
 if keyboard_check_pressed(ord("4")) and global.weapon4=1{
@@ -152,7 +149,6 @@ if keyboard_check_pressed(ord("4")) and global.weapon4=1{
 	spdatk=5
 	atkvar=10
 	weapon_obj.visible=true
-	weaponatk2_obj.visible=true
 }}
 
 
@@ -166,12 +162,13 @@ if keyboard_check_pressed(ord("4")) and global.weapon4=1{
 if global.playerhit=1{
 	hittimer-=1
 	sprite_index=Sprite20
+	image_alpha=0.5
 	if hittimer=27{global.vida-=global.dmgreceive}
 	if hittimer<=0{
 	global.playerhit=0
 	sprite_index=Sprite3
 	}
-}
+}else{image_alpha=1}
 
 
 

@@ -11,7 +11,6 @@ if global.sides>=2{
 
 
 if global.atk=1{
-	image_alpha=1
 	if global.sides=0{
 		
 	if global.weapon=1{
@@ -19,13 +18,6 @@ if global.atk=1{
 		if global.atktimer>=0 and global.atktimer<=40{
 		image_angle+=6.7
 		}
-		
-		
-		
-		
-		
-		
-		
 	}
 }
 else{
@@ -76,29 +68,14 @@ if global.atk=2{
 
 }
 else
-{image_alpha=weaponatk2_obj.image_alpha
-		if global.weapon=1{
-		if player_obj.atkfat=0{
-			if global.sides=0{
-				image_angle = point_direction(x, y, mouse_x, mouse_y)+90
-				sprite_index=Sprite23
-			}else{
-				image_angle = point_direction(x, y, mouse_x, mouse_y)-90
-				sprite_index=Sprite22}
-		}else{
-			if global.sides=0{
-				image_angle = point_direction(x, y, mouse_x, mouse_y)+90
-				sprite_index=Sprite26
-			}else{
-				image_angle = point_direction(x, y, mouse_x, mouse_y)-90
-				sprite_index=Sprite25}
-		}
-
-
-
+{
+	if global.sides=0{
+image_angle = point_direction(x, y, mouse_x, mouse_y)+90
 	}
-	
-	
+	if global.sides=1{
+image_angle = point_direction(x, y, mouse_x, mouse_y)-90
+	}
+sprite_index=hollow
 }
 
 
