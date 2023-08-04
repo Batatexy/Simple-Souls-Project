@@ -1,4 +1,7 @@
 {
   "FolderOrderSettings": [],
-  "ResourceOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"Sprite31","order":1,"path":"sprites/Sprite31/Sprite31.yy",},
+    {"name":"Nevoa1","order":1,"path":"objects/Nevoa1/Nevoa1.yy",},
+  ],
 }

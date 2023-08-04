@@ -4,7 +4,8 @@ var down = keyboard_check(ord("S")) or keyboard_check(vk_down)
 var up = keyboard_check(ord("W")) or keyboard_check(vk_up)
 
 if global.morte=0{
-if mouse_check_button_pressed(mb_left) and global.weapon!=0 and global.atk=0 and atkfat=0{
+	
+if mouse_check_button_pressed(mb_left) and global.weapon!=0 and global.atk=0 and atkfat=0 and global.playerhit=0{
 	spd-=spdatk
 	global.sides+=1
 	global.atk=1
@@ -25,7 +26,7 @@ if global.atk=1{
 	}
 }
 
-if mouse_check_button_pressed(mb_right) and global.weapon!=0 and global.atk=0 and atkfat=0{
+if mouse_check_button_pressed(mb_right) and global.weapon!=0 and global.atk=0 and atkfat=0 and global.playerhit=0{
 	spd-=spdatk*1.2
 	global.atk=2
 	global.atktimer=atkvar
@@ -165,10 +166,12 @@ if global.playerhit=1{
 	image_alpha=0.5
 	if hittimer=27{global.vida-=global.dmgreceive}
 	if hittimer<=0{
+	hittimer=hitvar
 	global.playerhit=0
-	sprite_index=Sprite3
 	}
-}else{image_alpha=1}
+}else{
+	sprite_index=Sprite3
+	image_alpha=1}
 
 
 

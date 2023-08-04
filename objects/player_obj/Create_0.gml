@@ -1,6 +1,6 @@
 global.vida=10
 global.playerhit=0
-global.dmgreceive=0
+global.dmgreceive=10
 global.morte=0
 global.stamina=10
 

@@ -1,10 +1,10 @@
 if global.morte=0{
-//move_towards_point(player_obj.x,player_obj.y,spd);
+move_towards_point(player_obj.x,player_obj.y,spd);
 }else{move_towards_point(0,0,0);
 	atkmode=0
 	sprite_index=Sprite5
 	}
-
+///////////////Abrir bau////////////////////////////////////////////////////////////
 if atkmode=0{
 	sprite_index=Sprite5
 if open=0 and place_meeting(x,y,player_obj) and keyboard_check_pressed(ord("E")){
@@ -27,11 +27,12 @@ if open=1{
 		open=2
 		atksoundon=1	
 }}
-}else{
-
+}
+else////////////////Atacar o bau//////////////////////////////////////////////////////
+{
 sprite_index=Sprite8
 spd=spdvar
-
+//////////////////Dano que o bau da no Player////////////////////////////////////////
 if place_meeting(x,y,player_obj){
 	if global.playerhit=0{
 		global.dmgreceive=dmg
@@ -44,7 +45,7 @@ if place_meeting(x,y,player_obj){
 	sprite_index=Sprite5
 		}
 }
-
+//////////////////Dano que o bau da no Player////////////////////////////////////////
 if noatktimer=1{
 	atkmode=0
 	noatktimer1-=1
@@ -62,7 +63,7 @@ if atksoundon=1{
 	if atksound=3{audio_play_sound(Mimic8,0,false,0.6)}
 	atksoundon=0
 }
-
+///////////////////////Dano que o bau toma/////////////////////////////////////////////////////////
 if place_meeting(x,y,weapon_obj) and hit=0 and global.weapon!=0 and noatktimer=0 and global.atk!=0{
 	dmgsound=irandom_range(1,3)
 	if dmgsound=1{audio_play_sound(Mimic1,0,false,0.6)}
@@ -83,9 +84,7 @@ if hit=1{
 	spd-=4
 	sprite_index=Sprite9}
 	hittimer-=1
-	
-	
-	
+
 	if hittimer<=0 and noatktimer=0{
 	sprite_index=Sprite8
 	hittimer=hitvar
