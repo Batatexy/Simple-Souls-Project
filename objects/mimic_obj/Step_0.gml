@@ -64,24 +64,22 @@ if atksoundon=1{
 	atksoundon=0
 }
 ///////////////////////Dano que o bau toma/////////////////////////////////////////////////////////
-if place_meeting(x,y,weapon_obj) and hit=0 and global.weapon!=0 and noatktimer=0 and global.atk!=0{
+if place_meeting(x,y,weapon_obj) and hit=0 and global.weapon!=0 and noatktimer=0 and global.atk!=0 and global.atkwall=0{
+	hit=1
 	dmgsound=irandom_range(1,3)
 	if dmgsound=1{audio_play_sound(Mimic1,0,false,0.6)}
 	if dmgsound=2{audio_play_sound(Mimic2,0,false,0.6)}
 	if dmgsound=3{audio_play_sound(Mimic3,0,false,0.6)}
 	
-	if global.atk=1 {
-	if global.atkwall=1{life-=global.dmg/4}else{life-=global.dmg}}
-	if global.atk=2 {
-	if global.atkwall=1{life-=global.dmg/4}else{life-=global.dmg*1.5}}
-	hit=1
+	if global.atk=1{life-=global.dmg}
+	if global.atk=2{life-=global.dmg*1.5}
 }
 
 if hit=1{
 	if atkmode=0{
 	sprite_index=Sprite10
 	}else{
-	spd-=4
+	spd-=spd/1.3
 	sprite_index=Sprite9}
 	hittimer-=1
 

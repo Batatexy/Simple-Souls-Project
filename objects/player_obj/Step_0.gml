@@ -76,17 +76,31 @@ atkfatinc-=atkfatdec
 	atkfatinc=1
 }
 
-if (right) && (up) and !place_meeting(x+hb,y-hb , wall)
+if keyboard_check(vk_shift){
+	spd= spdvar*2
+}else{spd=spdvar}
+
+
+if (right) && (up) and !place_meeting(x+hb,y-hb , wall) and !place_meeting(x+hb,y-hb , objvar1)
+and !place_meeting(x+hb,y-hb , objvar2) and !place_meeting(x+hb,y-hb , objvar3)
+and !place_meeting(x+hb,y-hb , objvar4) and !place_meeting(x+hb,y-hb , objvar5)
+and !place_meeting(x+hb,y-hb , objvar6) and !place_meeting(x+hb,y-hb , objvar7)
 {
 direction=45
 speed=spd
 }
-else if (right) && (down) and !place_meeting(x+hb,y+hb , wall) 
+else if (right) && (down) and !place_meeting(x+hb,y+hb , wall) and !place_meeting(x+hb,y+hb , objvar1) 
+and !place_meeting(x+hb,y+hb , objvar2) and !place_meeting(x+hb,y+hb , objvar3) 
+and !place_meeting(x+hb,y+hb , objvar4) and !place_meeting(x+hb,y+hb , objvar5) 
+and !place_meeting(x+hb,y+hb , objvar6) and !place_meeting(x+hb,y+hb , objvar7) 
 {
 direction=315
 speed=spd
 }
-else if (left && up) and !place_meeting(x-hb,y-hb , wall)
+else if (left && up) and !place_meeting(x-hb,y-hb , wall) and !place_meeting(x-hb,y-hb , objvar1)
+and !place_meeting(x-hb,y-hb , objvar2) and !place_meeting(x-hb,y-hb , objvar3)
+and !place_meeting(x-hb,y-hb , objvar4) and !place_meeting(x-hb,y-hb , objvar5)
+and !place_meeting(x-hb,y-hb , objvar6) and !place_meeting(x-hb,y-hb , objvar7)
 {
 direction=135
 speed=spd
@@ -123,7 +137,7 @@ if global.atk=0{
 if keyboard_check_pressed(ord("1")) and global.weapon1=1{
 	global.weapon=1
 	global.dmg = 4
-	spdatk=3.5
+	spdatk=1.75
 	atkvar=30
 	weapon_obj.visible=true
 }else
@@ -131,7 +145,7 @@ if keyboard_check_pressed(ord("1")) and global.weapon1=1{
 if keyboard_check_pressed(ord("2")) and global.weapon2=1{
 	global.weapon=2
 	global.dmg = 3
-	spdatk=4
+	spdatk=2
 	atkvar=30
 	weapon_obj.visible=true
 }else
@@ -139,7 +153,7 @@ if keyboard_check_pressed(ord("2")) and global.weapon2=1{
 if keyboard_check_pressed(ord("3")) and global.weapon3=1{
 	global.weapon=3
 	global.dmg = 0
-	spdatk=5
+	spdatk=2.5
 	atkvar=100
 	weapon_obj.visible=true
 }else
@@ -147,7 +161,7 @@ if keyboard_check_pressed(ord("3")) and global.weapon3=1{
 if keyboard_check_pressed(ord("4")) and global.weapon4=1{
 	global.weapon=4
 	global.dmg = 0
-	spdatk=5
+	spdatk=2.5
 	atkvar=10
 	weapon_obj.visible=true
 }}

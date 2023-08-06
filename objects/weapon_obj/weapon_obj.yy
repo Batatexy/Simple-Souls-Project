@@ -28,7 +28,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "sword",
+    "path": "sprites/sword/sword.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

@@ -3,10 +3,12 @@ global.playerhit=0
 global.dmgreceive=10
 global.morte=0
 global.stamina=10
+global.staminaon=0
 
-spd = 5
+spdvar=1.8
+spd = spdvar
 spdatk=0
-hb=7
+hb=3
 
 atkvar=40
 atktimer=atkvar
@@ -34,3 +36,14 @@ atkfatdec=0.1
 atkfat=0
 atkfatinc=0
 atkfattimer=0
+
+
+
+
+objvar1=0
+objvar2=0
+objvar3=0
+objvar4=0
+objvar5=0
+objvar6=0
+objvar7=0

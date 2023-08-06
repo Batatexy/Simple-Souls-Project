@@ -11,6 +11,7 @@ if global.sides>=2{
 
 
 if global.atk=1{
+	visible=true
 	if global.sides=0{
 		
 	if global.weapon=1{
@@ -40,19 +41,22 @@ else{
 if global.atk=2{
 	image_alpha=1
 	if global.weapon=1{
-		if global.atktimer>28{
+		if global.atktimer>29{
 		visible=true
 		sprite_index=sword
 		image_angle = point_direction(x, y, mouse_x, mouse_y)
 		direction=point_direction(x, y, mouse_x, mouse_y)
-		speed=8
+		speed=10
 		
 		}
-		if global.atktimer>=0 and global.atktimer<=24{
+		if global.atktimer>=0 and global.atktimer<=26{
 		direction=point_direction(x, y, player_obj.x, player_obj.y)
-		speed=3.8
+		speed=5
 		
-		if place_meeting(x,y,player_obj){global.atktimer=0}
+		if place_meeting(x,y,player_obj) or global.atktimer<=20{
+			visible=false
+			sprite_index=hollow
+			}
 		}
 	}
 
