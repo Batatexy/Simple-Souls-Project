@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objetos",
-    "path": "folders/Objetos.yy",
+    "name": "Triggers",
+    "path": "folders/Objetos/Triggers.yy",
   },
   "parentObjectId": null,
   "persistent": false,

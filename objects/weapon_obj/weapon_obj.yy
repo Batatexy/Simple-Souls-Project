@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sword",
-    "path": "sprites/sword/sword.yy",
+    "name": "spear",
+    "path": "sprites/spear/spear.yy",
   },
   "spriteMaskId": null,
   "visible": true,
