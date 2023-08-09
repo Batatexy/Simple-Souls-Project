@@ -1,10 +1,10 @@
 //https://forum.gamemaker.io/index.php?threads/move-towards-point-and-collision.74598/
 var dir=point_direction(x,y,target.x,target.y)
 
-if atk=0 and hit=0 and distance_to_object(player_obj)<distance 
+if atk=0 and hit=0 and distance_to_object(player_obj)<distance and player_obj.visible=true
 {
 global.enemysides+=1
-instance_create_layer(x, y, "Hud", weaponenemy)
+instance_create_layer(x, y, "Hud", weaponenemy1)
 triggertime=triggervar
 atk=1
 }
@@ -94,3 +94,4 @@ if life<=0
 {
 instance_destroy()
 }
+

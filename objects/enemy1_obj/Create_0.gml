@@ -4,7 +4,7 @@ life=10
 spdvar=1.2
 spd=spdvar
 target=player_obj
-distance=45
+distance=40
 atk=0
 
 triggervar=80

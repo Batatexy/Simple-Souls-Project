@@ -113,7 +113,7 @@
         {"name":"g_FractalNoiseSpeed","type":0,"value":"0.75",},
         {"name":"g_FractalNoiseTintColour","type":1,"value":"#FFFFFFFF",},
         {"name":"g_FractalNoiseTexture","type":2,"value":"_filter_fractal_noise_texture",},
-      ],"userdefinedDepth":false,"visible":false,},
+      ],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"PropsUpper","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_37BBD7C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"porta","path":"objects/porta/porta.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3271.0,"y":4640.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
@@ -160,7 +160,7 @@
   },
   "sequenceId": null,
   "views": [
-    {"hborder":9999,"hport":768,"hspeed":-1,"hview":240,"inherit":false,"objectId":{"name":"player_obj","path":"objects/player_obj/player_obj.yy",},"vborder":9999,"visible":true,"vspeed":-1,"wport":1366,"wview":427,"xport":0,"xview":0,"yport":0,"yview":0,},
+    {"hborder":9999,"hport":810,"hspeed":-1,"hview":234,"inherit":false,"objectId":{"name":"player_obj","path":"objects/player_obj/player_obj.yy",},"vborder":9999,"visible":true,"vspeed":-1,"wport":1440,"wview":416,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},

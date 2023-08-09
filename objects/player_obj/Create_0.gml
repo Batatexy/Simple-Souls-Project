@@ -33,8 +33,8 @@ dashvar=10//Tempo de desvio
 dashtimer=dashvar
 dash=0
 
-//Velocidade
-global.spdvar=1.8//Velocidade de movimento
+//Velocidade de movimento
+global.spdvar=1.8
 spd = global.spdvar
 spdatk=0
 
