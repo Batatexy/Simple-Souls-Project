@@ -1,6 +1,9 @@
 //https://forum.gamemaker.io/index.php?threads/move-towards-point-and-collision.74598/
 var dir=point_direction(x,y,target.x,target.y)
 
+
+if visible=true and spawnnumber>0
+{
 if atk=0 and hit=0 and distance_to_object(player_obj)<distance and player_obj.visible=true
 {
 global.enemysides+=1
@@ -88,10 +91,28 @@ sprite_index=Sprite19
 	hit=0
 	}
 }
-//else{spd=spdvar}
 
-if life<=0
-{
-instance_destroy()
 }
+
+if life<=0 and visible=true
+{
+spawnnumber-=1
+visible=false
+sprite_index=hollow
+
+if spawnnumber<=0
+{
+visible=false
+sprite_index=hollow
+}
+}
+
+if global.morte=3
+{
+x=place.x // no mimic vo ter q criar um obj spawn tambem
+y=place.y
+visible=true
+life=lifevar
+}
+
 

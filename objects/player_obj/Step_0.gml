@@ -109,7 +109,7 @@ image_alpha=1
 }
 
 //Morte
-if global.vida<=0
+if global.vida<=0 and visible=true
 {
 global.morte=1
 global.atk=0
@@ -275,7 +275,9 @@ and !place_meeting(x,y+hb , objvar2) and !place_meeting(x,y+hb , objvar3)
 and !place_meeting(x,y+hb , objvar4) and !place_meeting(x,y+hb , objvar5)
 and !place_meeting(x,y+hb , objvar6) and !place_meeting(x,y+hb , objvar7)
 
-	{speed=spd*2}else{speed=0}
+	{speed=spd*2}else{
+		spd=0
+		speed=0}
 	
 	if dashtimer=dashvar-1{global.stamina-=global.staminadec}
 

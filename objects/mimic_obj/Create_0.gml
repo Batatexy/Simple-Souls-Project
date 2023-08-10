@@ -1,5 +1,5 @@
 open=0
-spdtimer=55
+spdtimer=60
 atkmode=0
 dmg=6
 spdvar=2.7

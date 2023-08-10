@@ -1,10 +1,10 @@
 if global.morte=0
 {
-move_towards_point(player_obj.x,player_obj.y,spd);
+move_towards_point(player_obj.x,player_obj.y,spd)
 }
 else
 {
-move_towards_point(0,0,0);
+move_towards_point(0,0,0)
 atkmode=0
 sprite_index=Sprite5
 }
@@ -15,13 +15,13 @@ sprite_index=Sprite5
 	if open=0 and place_meeting(x,y,player_obj) and keyboard_check_pressed(ord("E"))
 	{// Abriu o bau kkkkkkkkk
 	open=1
-	global.morte=1
 	audio_play_sound(opensound,0,false)
 	}
 	if open=1
 	{
 		player_obj.speed=0
 		player_obj.spd=0
+		global.atk=2
 		if spdtimer<=0
 		{
 		sprite_index=Sprite8
@@ -32,10 +32,10 @@ sprite_index=Sprite5
 		}
 		else
 		{
+		spdtimer=60
 		sprite_index=Sprite5
-		player_obj.visible=false
-		player_obj.sprite_index=hollow
-		open=2
+		open=0
+		global.vida-=50
 		atksoundon=1	
 		}	
 	}

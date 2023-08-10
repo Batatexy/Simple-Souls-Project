@@ -1,5 +1,7 @@
 hit=0
-life=10
+lifevar=10
+life=lifevar
+spawnnumber=10
 
 spdvar=1.2
 spd=spdvar

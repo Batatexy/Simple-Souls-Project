@@ -16,7 +16,7 @@ global.morte=0
 	global.hittimer=global.hitvar
 	hitvar=global.hitvar
 	hittimer=hitvar
-	
+
 	//Cansaço
 	atkfatincnumber=10//Velocidade que cansa
 	atkfatdec=0.1//Velocidade que descansa
