@@ -1,28 +1,27 @@
-hit=0
+//Variaveis de vida
 lifevar=10
 life=lifevar
 spawnnumber=10
-
+//Variaveis de velocidade
 spdvar=1.2
 spd=spdvar
-target=player_obj
-distance=40
+//Variaveis de ataque
+distance=32
 atk=0
 
 triggervar=80
 triggertime=triggervar
 global.enemysides=0
 
+hit=0
 hitvar=global.hitvar
 hittimer=global.hittimer
 
-place=wall
-if place_meeting(x,y,spawnarea1)
-{
-place=spawnarea1
-}
+//Movimentação
+path=path_add()
 
-if place_meeting(x,y,spawnarea2)
-{
-place=spawnarea2
-}
+
+
+//Coordenada do spawn
+spawnx=x
+spawny=y

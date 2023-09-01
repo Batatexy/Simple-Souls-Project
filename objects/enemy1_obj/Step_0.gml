@@ -1,14 +1,12 @@
-//https://forum.gamemaker.io/index.php?threads/move-towards-point-and-collision.74598/
-var dir=point_direction(x,y,target.x,target.y)
 
 
 if visible=true and spawnnumber>0
 {
 if atk=0 and hit=0 and distance_to_object(player_obj)<distance and player_obj.visible=true
 {
+//Desenvolver um sistema de id mesmo com vários objetos iguais
 global.enemysides+=1
 instance_create_layer(x, y, "Hud", weaponenemy1)
-triggertime=triggervar
 atk=1
 }
 if atk=1
@@ -22,62 +20,47 @@ spd=0
 	}
 }
 
-
-
-if global.triggerenemy1<global.triggerenemyvar and atk=0 and player_obj.visible=true
+//Seguir o player ou voltar pro spawn
+if atk=0
 {
-	target=player_obj
-	if distance_to_object(player_obj)>distance
+var x1=x
+var y1=y
+spd=spdvar
+	if global.triggerenemy1<global.triggerenemyvar and player_obj.visible=true
 	{
-	spd=spdvar
-	}
-	
-	if !place_meeting(x+lengthdir_x(spd,dir),y+lengthdir_y(spd,dir),(wall))
-	and !place_meeting(x+lengthdir_x(spd,dir),y+lengthdir_y(spd,dir),(enemy1_obj))
-	and !place_meeting(x+lengthdir_x(spd,dir),y+lengthdir_y(spd,dir),(wallenemy))
-	{
-	x+=lengthdir_x(spd,dir)
-	y+=lengthdir_y(spd,dir)
+	var x2=(player_obj.x div aim_obj.cell_t)*aim_obj.cell_t+(aim_obj.cell_t/2)
+	var y2=(player_obj.y div aim_obj.cell_t)*aim_obj.cell_t+(aim_obj.cell_t/2)
+
+		if (mp_grid_path(aim_obj.mp_grid,path,x1,y1,x2,y2,true))
+		{
+		path_start(path,spd,path_action_stop,false)
+		}
 	}
 	else
-	{
-		while(!place_meeting(x+lengthdir_x(1,dir),y+lengthdir_y(1,dir),wall))
-		and !place_meeting(x+lengthdir_x(spd,dir),y+lengthdir_y(spd,dir),(enemy1_obj))
-		and !place_meeting(x+lengthdir_x(spd,dir),y+lengthdir_y(spd,dir),(wallenemy))
+	{//Melhorar sa porra em
+	var x2=(spawnx div aim_obj.cell_t)*aim_obj.cell_t+(aim_obj.cell_t/2)
+	var y2=(spawny div aim_obj.cell_t)*aim_obj.cell_t+(aim_obj.cell_t/2)
+
+		if (mp_grid_path(aim_obj.mp_grid,path,x1,y1,x2,y2,true))
 		{
-		x+=lengthdir_x(1,dir)
-		y+=lengthdir_y(1,dir)
+		path_start(path,spd,path_action_stop,false)
 		}
 	}
 }
 else
 {
-	if !place_meeting(x+lengthdir_x(spd,dir),y+lengthdir_y(spd,dir),(Scripts))
-	{
-	x+=lengthdir_x(spd,dir)
-	y+=lengthdir_y(spd,dir)
-	}
-	else
-	{
-		while(!place_meeting(x+lengthdir_x(1,dir),y+lengthdir_y(1,dir),wall))
-		{
-		x+=lengthdir_x(1,dir)
-		y+=lengthdir_y(1,dir)
-		}
-	}
-	
-	if !place_meeting(x,y,place)
-	{
-	spd=spdvar
-	target=place
-	}else{spd=0}
+if path_exists(path)
+{
+path_clear_points(path)
+}
+spd=0
+speed=0
 }
 
 if place_meeting(x,y,weapon_obj) and hit=0 and global.weapon!=0 and global.atk!=0 and global.atkwall=0
 {
 hit=1
 	if global.atk=1{life-=global.dmg}
-	if global.atk=2{life-=global.dmg*1.5}
 }
 if hit=1
 {
@@ -109,9 +92,10 @@ sprite_index=hollow
 
 if global.morte=3
 {
-x=place.x // no mimic vo ter q criar um obj spawn tambem
-y=place.y
+x=spawnx
+y=spawny
 visible=true
+//Criar um esquema de aleatoridade de vida
 life=lifevar
 }
 

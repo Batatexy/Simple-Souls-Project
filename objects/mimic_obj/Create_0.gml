@@ -1,10 +1,14 @@
+spawnx=x
+spawny=y
+
 open=0
 spdtimer=60
 atkmode=0
 dmg=6
 spdvar=2.7
 spd=0
-life=20
+lifevar=20
+life=lifevar
 hit=0
 hitvar=global.hitvar
 hittimer=global.hittimer

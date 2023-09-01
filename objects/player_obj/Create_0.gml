@@ -17,22 +17,6 @@ global.morte=0
 	hitvar=global.hitvar
 	hittimer=hitvar
 
-	//Cansaço
-	atkfatincnumber=10//Velocidade que cansa
-	atkfatdec=0.1//Velocidade que descansa
-	atkfat=0
-	atkfatinc=0
-	atkfattimer=0
-
-//Stamina
-global.staminamax=10//Stamina máxima
-global.stamina=global.staminamax
-global.staminaval=0.01//Velocidade que descansa
-global.staminadec=3//Velocidade que cansa
-dashvar=10//Tempo de desvio
-dashtimer=dashvar
-dash=0
-
 //Velocidade de movimento
 global.spdvar=1.8
 spd = global.spdvar
@@ -41,8 +25,8 @@ spdatk=0
 //Hitbox com paredes e portas
 hb=4
 objvar1=walldoor1
-objvar2=hollow
-objvar3=hollow
+objvar2=walldoor2
+objvar3=enemy1_obj
 objvar4=hollow
 objvar5=hollow
 objvar6=hollow
@@ -52,9 +36,9 @@ objvar7=hollow
 
 //Arma selecionada
 global.weapon=0
-
+//Armas liberadas
 global.weapon1=1
-global.weapon2=1
+global.weapon2=0
 global.weapon3=0
 global.weapon4=0
 
@@ -65,10 +49,11 @@ global.key3=0
 global.key4=0
 global.key5=0
 
+global.wall01=0
 
 
-
-
+global.tpplacex=x
+global.tpplacey=y
 
 
 

@@ -1,24 +1,25 @@
 open=0
-spdtimer=55
+opentimer=55
 
+//O que vai vir no baú?
 place=0
-
-if place_meeting(x,y,triggersword){
+if x=3248 and y=4632{
 	place=1
 }
-if place_meeting(x,y,triggerkey){
+if x=0 and y=0{
 	place=2
 }
-if place_meeting(x,y,triggeraxe){
+if x=0 and y=0{
 	place=3
 }
-if place_meeting(x,y,triggerbow){
+if x=0 and y=0{
 	place=4
 }
-if place_meeting(x,y,triggerspear){
+if x=0 and y=0{
 	place=5
 }
 
+//Aleatoridade do som do baú
 sound=irandom(6)
 if sound=1{sound=Bau1}
 if sound=2{sound=Bau2}

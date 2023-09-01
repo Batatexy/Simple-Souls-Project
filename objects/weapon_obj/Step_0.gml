@@ -21,7 +21,7 @@ if global.morte=0
 				}
 			}
 		}
-		else
+		if global.sides=1//Armas que rodam:
 		{
 			if global.weapon=1//Espada
 			{
@@ -40,6 +40,9 @@ if global.morte=0
 				}
 			}	
 		}
+		
+		
+		
 		if global.weapon=2//Lança
 		{
 			if global.atktimer>=29//Determinar a direção da lança
@@ -59,11 +62,11 @@ if global.morte=0
 			{
 			direction=point_direction(x, y, player_obj.x, player_obj.y)
 			speed=1.8
-			if place_meeting(x,y,player_obj)
-			{
-			visible=false
-			sprite_index=hollow
-			}
+				if place_meeting(x,y,player_obj)
+				{
+				visible=false
+				sprite_index=hollow
+				}
 			}
 			if global.atktimer<=0
 			{

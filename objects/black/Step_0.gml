@@ -1,7 +1,8 @@
 x=player_obj.x
 y=player_obj.y
 
-if global.morte=1{
+if global.morte=1
+{
 trigger=1
 alphavalue=0.0001
 image_alpha=0
@@ -41,6 +42,7 @@ image_alpha=1
 //Tp pra fogueira
 if timer>=625 and timer<=630
 {
+camera_obj.smooth=1
 aim_obj.image_alpha=1
 instance_destroy(blackbar)
 instance_destroy(youdied)
@@ -48,10 +50,8 @@ global.morte=3
 global.vida=global.vidamax
 player_obj.visible=true
 //Tp nas fogueiras
-x=global.tpplace.x
-y=global.tpplace.y
-player_obj.x=global.tpplace.x
-player_obj.y=global.tpplace.y
+player_obj.x=global.tpplacex
+player_obj.y=global.tpplacey
 }
 //Clarear
 if timer<=600
@@ -66,10 +66,10 @@ global.morte=0
 player_obj.spd+=0.02
 global.atk=2
 
-if player_obj.spd>global.spdvar
-{
-player_obj.spd=global.spdvar
-}
+	if player_obj.spd>global.spdvar
+	{
+	player_obj.spd=global.spdvar
+	}
 }
 if timer=435{global.atk=0}
 

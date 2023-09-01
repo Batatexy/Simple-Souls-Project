@@ -6,16 +6,12 @@ var up = keyboard_check(ord("W")) or keyboard_check(vk_up)
 if global.morte=0
 {
 	if mouse_check_button_pressed(mb_left) and global.weapon!=0 
-	and global.atk=0 and atkfat=0 and global.playerhit=0 and dash=0
+	and global.atk=0 and global.playerhit=0
 	{
 	spd-=spdatk
-	global.sides+=1
 	global.atk=1
+	global.sides+=1
 	global.atktimer=atkvar
-	
-	atkfatinc+=atkfatincnumber
-	atkfattimer=atkfatinc
-	atkfat=1
 	}
 
 	if global.atk=1
@@ -27,19 +23,6 @@ if global.morte=0
 		global.atktimer=atkvar
 		global.atk=0
 		}
-	}
-	if atkfat=1
-	{
-	atkfattimer-=1
-		if atkfattimer<=0
-		{
-		atkfat=0
-		atkfattimer=0
-		}
-	}
-	if atkfatinc<1
-	{
-	atkfatinc=1
 	}
 
 
@@ -104,7 +87,7 @@ image_alpha=0.5
 }
 else
 {
-if dash=0{sprite_index=Sprite3}else{sprite_index=Sprite3_Hitbox}
+sprite_index=Sprite3
 image_alpha=1
 }
 
@@ -119,21 +102,31 @@ visible=false
 sprite_index=hollow
 }
 
-if place_meeting(x,y,triggerarea1)
-{
-global.triggerenemy1-=global.triggerenemyvar
-//global.triggerenemy1-=0.333
-}
-else
-{
-global.triggerenemy1+=1
-}
 
+
+//Troca de Camera em algumas areas
+if player_obj.visible=true
+{
+	if place_meeting(x,y,triggerarea1)
+	{
+	global.camera=1
+	}
+	else if place_meeting(x,y,triggerarea2)
+	{
+	global.camera=2
+	}
+	else if place_meeting(x,y,triggerarea3)
+	{
+	global.camera=3
+	}
+	else
+	{
+	global.camera=0
+	}
+}
 
 
 //Movimentação
-if !keyboard_check_pressed(vk_shift) and dash=0
-{
 if global.morte=0{
 if (right) && (up) and !place_meeting(x+hb,y-hb , wall) and !place_meeting(x+hb,y-hb , objvar1)
 and !place_meeting(x+hb,y-hb , objvar2) and !place_meeting(x+hb,y-hb , objvar3)
@@ -207,83 +200,3 @@ speed=0
 	
 
 
-}
-else
-{
-if global.stamina>0 and global.atk=0 and global.playerhit=0
-{
-dash=1
-sprite_index=Sprite3_Hitbox
-}
-}
-
-if dash=1
-{
-dashtimer-=1
-
-if direction=45 and !place_meeting(x+hb,y-hb , wall) and !place_meeting(x+hb,y-hb , objvar1)
-and !place_meeting(x+hb,y-hb , objvar2) and !place_meeting(x+hb,y-hb , objvar3)
-and !place_meeting(x+hb,y-hb , objvar4) and !place_meeting(x+hb,y-hb , objvar5)
-and !place_meeting(x+hb,y-hb , objvar6) and !place_meeting(x+hb,y-hb , objvar7)
-
-or
-
-direction=315 and !place_meeting(x+hb,y+hb , wall) and !place_meeting(x+hb,y+hb , objvar1) 
-and !place_meeting(x+hb,y+hb , objvar2) and !place_meeting(x+hb,y+hb , objvar3) 
-and !place_meeting(x+hb,y+hb , objvar4) and !place_meeting(x+hb,y+hb , objvar5) 
-and !place_meeting(x+hb,y+hb , objvar6) and !place_meeting(x+hb,y+hb , objvar7) 
-
-or
-
-direction=135 and !place_meeting(x-hb,y-hb , wall) and !place_meeting(x-hb,y-hb , objvar1)
-and !place_meeting(x-hb,y-hb , objvar2) and !place_meeting(x-hb,y-hb , objvar3)
-and !place_meeting(x-hb,y-hb , objvar4) and !place_meeting(x-hb,y-hb , objvar5)
-and !place_meeting(x-hb,y-hb , objvar6) and !place_meeting(x-hb,y-hb , objvar7)
-
-or
-
-direction=225 and !place_meeting(x-hb,y+hb , wall) and !place_meeting(x-hb,y+hb , objvar1)
-and !place_meeting(x-hb,y+hb , objvar2) and !place_meeting(x-hb,y+hb , objvar3)
-and !place_meeting(x-hb,y+hb , objvar4) and !place_meeting(x-hb,y+hb , objvar5)
-and !place_meeting(x-hb,y+hb , objvar6) and !place_meeting(x-hb,y+hb , objvar7)
-
-or
-
-direction=0 and !place_meeting(x+hb,y , wall) and !place_meeting(x+hb,y , objvar1)
-and !place_meeting(x+hb,y , objvar2) and !place_meeting(x+hb,y , objvar3)
-and !place_meeting(x+hb,y , objvar4) and !place_meeting(x+hb,y , objvar5)
-and !place_meeting(x+hb,y , objvar6) and !place_meeting(x+hb,y , objvar7)
-
-or
-
-direction=90 and !place_meeting(x,y-hb , wall) and !place_meeting(x,y-hb , objvar1)
-and !place_meeting(x,y-hb , objvar2) and !place_meeting(x,y-hb , objvar3)
-and !place_meeting(x,y-hb , objvar4) and !place_meeting(x,y-hb , objvar5)
-and !place_meeting(x,y-hb , objvar6) and !place_meeting(x,y-hb , objvar7)
-
-or
-
-direction=180 and !place_meeting(x-hb,y , wall) and !place_meeting(x-hb,y , objvar1)
-and !place_meeting(x-hb,y , objvar2) and !place_meeting(x-hb,y , objvar3)
-and !place_meeting(x-hb,y , objvar4) and !place_meeting(x-hb,y , objvar5)
-and !place_meeting(x-hb,y , objvar6) and !place_meeting(x-hb,y , objvar7)
-
-or
-
-direction=270 and !place_meeting(x,y+hb , wall) and !place_meeting(x,y+hb , objvar1)
-and !place_meeting(x,y+hb , objvar2) and !place_meeting(x,y+hb , objvar3)
-and !place_meeting(x,y+hb , objvar4) and !place_meeting(x,y+hb , objvar5)
-and !place_meeting(x,y+hb , objvar6) and !place_meeting(x,y+hb , objvar7)
-
-	{speed=spd*2}else{
-		spd=0
-		speed=0}
-	
-	if dashtimer=dashvar-1{global.stamina-=global.staminadec}
-
-	if dashtimer<=0
-	{
-	dash=0
-	dashtimer=dashvar
-	}
-}

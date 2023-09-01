@@ -109,3 +109,13 @@ if hit=1{
 if life<=0{
 	instance_destroy()
 }
+
+
+if global.morte=3
+{
+x=spawnx
+y=spawny
+visible=true
+//Criar um esquema de aleatoridade de vida
+life=lifevar
+}
